@@ -1,6 +1,5 @@
 import sqlite3
 
-
 def create_table(database):
     conn = sqlite3.connect(database)
     print("Opened database successfully")
@@ -33,6 +32,7 @@ def insert_table(database,os_path,hash_path):
     print("Records created successfully")
     conn.close()
     print ("closed database successfully")
+    input("press any key to continue")
 
 
 def select_table(database):
@@ -47,6 +47,7 @@ def select_table(database):
 
     print ("Operation done successfully")
     conn.close()
+    input("press any key to continue")
 
 
 def delete_table(database,id_target):
@@ -56,14 +57,15 @@ def delete_table(database,id_target):
     conn.commit()
     print ("Operation done successfully")
     conn.close()
+    input("press any key to continue")
 
 
 def drop_table(database):
     conn = sqlite3.connect(database=database)
-    print ("Opened database successfully")
+    #print ("Opened database successfully")
     conn.execute("DROP TABLE HASH_PATH;")
     conn.commit()
-    print ("Operation done successfully")
+    #print ("Operation done successfully")
     conn.close()
 
 
@@ -75,3 +77,4 @@ def update_table(database, os_bath, hash_path, id_target):
     conn.commit()
     print ("Operation done successfully")
     conn.close()
+    input("press any key to continue")
